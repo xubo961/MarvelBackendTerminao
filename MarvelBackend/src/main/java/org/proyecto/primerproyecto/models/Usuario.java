@@ -1,6 +1,7 @@
 package org.proyecto.primerproyecto.models;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class Usuario {
     private int edad;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<FavoritoMarvel> favoritos;
 
 

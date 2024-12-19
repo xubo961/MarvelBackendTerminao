@@ -1,6 +1,7 @@
 package org.proyecto.primerproyecto.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,7 @@ public class FavoritoMarvel {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private Usuario usuario;
 
     @Column(name = "serie_marvel", nullable = false)
